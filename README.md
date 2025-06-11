@@ -1,4 +1,4 @@
 # Hello Github
 ## Welcome to github
-    -Try new changes wisely
-    -No dont try to
+   -Welcome to github with horace witaba
+   -Happy to see you here
