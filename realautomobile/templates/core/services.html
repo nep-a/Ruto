@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<h1>Our Services</h1>
+<div class="row mt-3">
+	{% for s in services %}
+	<div class="col-md-4 mb-3">
+		<div class="card h-100">
+			<div class="card-body">
+				<h5 class="card-title">{{ s.name }}</h5>
+				<p class="card-text">{{ s.description }}</p>
+				<p class="fw-bold">${{ s.price }}</p>
+			</div>
+		</div>
+	</div>
+	{% empty %}
+	<p>No services available.</p>
+	{% endfor %}
+</div>
+{% endblock %}

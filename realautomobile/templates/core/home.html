@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div class="p-4 mb-4 bg-light rounded-3">
+	<h1 class="display-5">Welcome to RealAutomobile</h1>
+	<p class="lead">Expert car repair and maintenance services.</p>
+</div>
+<h2 class="mb-3">Services</h2>
+<div class="row">
+	{% for s in services %}
+	<div class="col-md-4 mb-3">
+		<div class="card h-100">
+			<div class="card-body">
+				<h5 class="card-title">{{ s.name }}</h5>
+				<p class="card-text">{{ s.description|truncatewords:20 }}</p>
+				<p class="fw-bold">${{ s.price }}</p>
+			</div>
+		</div>
+	</div>
+	{% empty %}
+	<p>No services yet.</p>
+	{% endfor %}
+</div>
+<h2 class="mt-4">Testimonials</h2>
+<div class="list-group">
+	{% for t in testimonials %}
+	<div class="list-group-item">
+		<strong>{{ t.customer_name }}</strong>
+		<span class="text-warning">{{ t.rating }}/5</span>
+		<p class="mb-0">{{ t.message }}</p>
+	</div>
+	{% empty %}
+	<p>No testimonials yet.</p>
+	{% endfor %}
+</div>
+{% endblock %}
